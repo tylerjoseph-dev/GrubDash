@@ -152,15 +152,12 @@ function checkIfCanDelete(req, res, next){
   })
 }
 
-function destroy(req, res){
-    const {orderId} = req.params;
-    const index = orders.findIndex((order) => order.id === orderId);
-    if(index < -1){
-        dishes.splice(index, 1);
-    }
+function destroy(req, res) {
+    const { orderId } = req.params;
+    const index = orders.findIndex((order) => order.id == orderId);
+    orders.splice(index, 1);
     res.sendStatus(204);
 }
-
 
 module.exports = {
   list,
