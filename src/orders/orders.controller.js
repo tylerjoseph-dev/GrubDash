@@ -154,8 +154,8 @@ function checkIfCanDelete(req, res, next){
 
 function destroy(req, res) {
     const { orderId } = req.params;
-    const index = orders.findIndex((order) => order.id == orderId);
-    orders.splice(index, 1);
+    const indexPos = orders.findIndex((order) => order.id == orderId);
+    orders.splice(indexPos, 1);
     res.sendStatus(204);
 }
 
